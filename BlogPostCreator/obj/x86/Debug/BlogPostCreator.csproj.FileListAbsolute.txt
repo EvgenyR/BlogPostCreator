@@ -1,0 +1,9 @@
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\bin\Debug\BlogPostCreator.exe
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\bin\Debug\BlogPostCreator.pdb
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.Properties.Resources.resources
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.exe
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.pdb
+C:\Users\Administrator\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.MainForm.resources
