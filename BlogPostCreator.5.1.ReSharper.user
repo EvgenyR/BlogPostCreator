@@ -1,0 +1,202 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="livetemplates.csharp.usevar">True</setting>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="private" priority="3" />
+      <Item value="XmlDocument`0" priority="0" />
+      <Item value="new" priority="6" />
+      <Item value="XmlDocument" priority="0" />
+      <Item value="XmlElement`0" priority="5" />
+      <Item value="XmlElement" priority="1" />
+      <Item value="xmlDoc" priority="13" />
+      <Item value="XmlAttribute`0" priority="2" />
+      <Item value="XmlAttribute" priority="0" />
+      <Item value="image" priority="3" />
+      <Item value="txtImageDate" priority="1" />
+      <Item value="alt" priority="1" />
+      <Item value="txtImageDesc" priority="1" />
+      <Item value="root" priority="2" />
+      <Item value="reference" priority="2" />
+      <Item value="txtRefUrl" priority="1" />
+      <Item value="txtRefText" priority="1" />
+      <Item value="void" priority="6" />
+      <Item value="string" priority="33" />
+      <Item value="DialogResult`0" priority="1" />
+      <Item value="result" priority="1" />
+      <Item value="sfdSaveBlog" priority="2" />
+      <Item value="if" priority="1" />
+      <Item value="OK" priority="0" />
+      <Item value="File`0" priority="1" />
+      <Item value="name" priority="0" />
+      <Item value="public" priority="6" />
+      <Item value="static" priority="8" />
+      <Item value="Helper`0" priority="5" />
+      <Item value="filename" priority="3" />
+      <Item value="ofdOpenBlog" priority="0" />
+      <Item value="newElement" priority="2" />
+      <Item value="text" priority="0" />
+      <Item value="attributes" priority="1" />
+      <Item value="foreach" priority="0" />
+      <Item value="attribute" priority="2" />
+      <Item value="attributeEntry" priority="1" />
+      <Item value="AddTag`0" priority="7" />
+      <Item value="url" priority="1" />
+      <Item value="Dictionary&lt;string,string&gt;" priority="1" />
+      <Item value="desc" priority="0" />
+      <Item value="alttext" priority="0" />
+      <Item value="DateTime`0" priority="0" />
+      <Item value="dateTime" priority="1" />
+      <Item value="title" priority="0" />
+      <Item value="description" priority="1" />
+      <Item value="keywords" priority="1" />
+      <Item value="case" priority="7" />
+      <Item value="const" priority="1" />
+      <Item value="break" priority="8" />
+      <Item value="txtTitle" priority="0" />
+      <Item value="txtDescription" priority="0" />
+      <Item value="txtKeywords" priority="0" />
+      <Item value="dtDate" priority="0" />
+      <Item value="txtPostID" priority="0" />
+      <Item value="postID" priority="0" />
+      <Item value="cmbParagraphs" priority="0" />
+      <Item value="cmbBlogType" priority="0" />
+      <Item value="blogType" priority="0" />
+      <Item value="classname" priority="3" />
+      <Item value="reader" priority="4" />
+      <Item value="brief" priority="1" />
+      <Item value="postdefinition" priority="12" />
+      <Item value="date" priority="1" />
+      <Item value="default" priority="0" />
+      <Item value="tagDescription" priority="0" />
+      <Item value="tagKeywords" priority="0" />
+      <Item value="tagPostID" priority="0" />
+      <Item value="switch" priority="0" />
+      <Item value="return" priority="0" />
+      <Item value="rest" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlDocument">
+      <Item value="CreateAttribute`0" priority="3" />
+      <Item value="CreateElement`0" priority="3" />
+      <Item value="DocumentElement" priority="3" />
+      <Item value="LoadXml`0" priority="0" />
+      <Item value="InnerXml" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlElement">
+      <Item value="AppendChild`0" priority="3" />
+      <Item value="Value" priority="0" />
+      <Item value="Attributes" priority="2" />
+      <Item value="InnerText" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.TextBox">
+      <Item value="Text" priority="11" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlAttribute">
+      <Item value="Value" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlAttributeCollection">
+      <Item value="Append`0" priority="2" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.SaveFileDialog">
+      <Item value="ShowDialog`0" priority="0" />
+      <Item value="FileName" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="WriteAllText`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@BlogPostCreator.Helper">
+      <Item value="StartDoc`0" priority="0" />
+      <Item value="AddImage`0" priority="0" />
+      <Item value="AddReference`0" priority="0" />
+      <Item value="WriteBlogXmlFile`0" priority="0" />
+      <Item value="ConvertBlogXmlFile`0" priority="0" />
+      <Item value="AddProperties`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.OpenFileDialog">
+      <Item value="FileName" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.Dictionary`2">
+      <Item value="Keys" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.DateTime">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.DateTimePicker">
+      <Item value="Value" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="SelectedText" priority="0" />
+      <Item value="SelectedItem" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Object">
+      <Item value="ToString`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Xml.XmlReader">
+      <Item value="ReadInnerXml`0" priority="4" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.String">
+      <Item value="Replace`0" priority="5" />
+      <Item value="Substring`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.Designer.cs" caret="17926" fromTop="30" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Dictionary.cs" caret="0" fromTop="0" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1290" fromTop="20" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2582" fromTop="19" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="574" fromTop="0" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.Designer.cs" caret="17926" fromTop="31" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.Designer.cs" caret="17926" fromTop="30" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="87" fromTop="1" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="268" fromTop="15" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="809" fromTop="21" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="877" fromTop="14" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1152" fromTop="28" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="162" fromTop="9" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="574" fromTop="9" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6472" fromTop="30" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6036" fromTop="53" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="7100" fromTop="53" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2146" fromTop="28" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="809" fromTop="12" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="7100" fromTop="23" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1403" fromTop="20" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="1364" fromTop="15" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="525" fromTop="16" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5837" fromTop="34" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="513" fromTop="12" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="1352" fromTop="11" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5145" fromTop="29" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="4577" fromTop="21" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="3071" fromTop="17" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="4614" fromTop="19" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="3073" fromTop="20" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5997" fromTop="26" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2812" fromTop="19" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2642" fromTop="20" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+</Configuration>

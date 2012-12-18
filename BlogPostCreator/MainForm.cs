@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Xml;
@@ -16,6 +10,8 @@ namespace BlogPostCreator
         public MainForm()
         {
             InitializeComponent();
+
+            Helper.StartDoc();
         }
 
         private void btnOpenFile_Click(object sender, EventArgs e)
@@ -23,44 +19,32 @@ namespace BlogPostCreator
             DialogResult result = ofdOpenBlog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                string file = ofdOpenBlog.FileName;
-                try
-                {
-                    string text = File.ReadAllText(file);
-                    string blog = ConvertToBlogger(text);
-                }
-                catch (Exception ex)
-                { 
-                
-                }
+                Helper.ConvertBlogXmlFile(ofdOpenBlog.FileName);
             }
         }
 
-        private string ConvertToBlogger(string text)
+        private void btnImage_Click(object sender, EventArgs e)
         {
-            string result = string.Empty;
-            using (XmlReader reader = XmlReader.Create(new StringReader(text)))
+            Helper.AddImage(txtImageDate.Text, txtImageDesc.Text);
+        }
+
+        private void btnAddRef_Click(object sender, EventArgs e)
+        {
+            Helper.AddReference(txtRefUrl.Text, txtRefText.Text);
+        }
+
+        private void btnSaveFile_Click(object sender, EventArgs e)
+        {
+            DialogResult result = sfdSaveBlog.ShowDialog();
+            if(result == DialogResult.OK)
             {
-                while (reader.Read())
-                {
-                    if (reader.NodeType == XmlNodeType.Element)
-                    {
-                        switch (reader.Name)
-                        { 
-                            case "para":
-                                result = result + "<p>" + reader.ReadInnerXml() + "</p>";
-                                break;
-                            case "image":
-                                string alt = reader.GetAttribute("alt");
-                                result = result + "<img src=" + reader.ReadInnerXml() + " alt=\"" + alt + "\"/>";
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                }
+                Helper.WriteBlogXmlFile(sfdSaveBlog.FileName);
             }
-            return result;
+        }
+
+        private void btnAddProperties_Click(object sender, EventArgs e)
+        {
+            Helper.AddProperties(txtTitle.Text, txtDescription.Text, txtKeywords.Text, txtPostID.Text, cmbBlogType.SelectedItem.ToString(), dtDate.Value);
         }
     }
 }
