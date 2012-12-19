@@ -5,53 +5,100 @@ using System.Collections.Generic;
 
 namespace BlogPostCreator
 {
+    public enum Tag
+    {
+        Postdate,
+        Blogtype,
+        Title,
+        Description,
+        Keywords,
+        Postid,
+        Image,
+        Ref,
+        Paragraph,
+        Code,
+        //attributes
+        Alt,
+        Desc,
+        //languages
+        Lang,
+        csharp,
+        xml,
+        jscript,
+
+    }
+
     public static class Helper
     {
-        public static XmlDocument xmlDoc;
+        public static XmlDocument xmlDoc = new XmlDocument();
 
-        private const string tagDate = "date";
-        private const string tagTitle = "title";
-        private const string tagBlogType = "blogtype";
-        private const string tagDescription = "description";
-        private const string tagKeywords = "keywords";
-        private const string tagPostID = "postid";
-
-        public static void StartDoc()
+        internal static void StartDoc()
         {
             xmlDoc.LoadXml("<blog></blog>");
         }
 
-        public static void AddImage(string filename, string alttext)
+        internal static void AddImage(string filename, string alttext)
         {
-            AddTag("image", filename, new Dictionary<string, string>{{"alt", alttext}});
+            AddTag(Tag.Image, filename, new Dictionary<Tag, string>{{Tag.Alt, alttext}});
         }
 
-        public static void AddReference(string url, string desc)
+        internal static void AddReference(string url, string desc)
         {
-            AddTag("ref", url, new Dictionary<string, string>{{"desc", desc}});
+            AddTag(Tag.Ref, url, new Dictionary<Tag, string>{{Tag.Desc, desc}});
+        }
+
+        internal static void AddText(string text)
+        {
+            //AddTag(Tag.Paragraph, "<![CDATA[" + text + "]]>");
+            AddCData(Tag.Paragraph, text);
+        }
+
+        internal static void AddCode(string code, Dictionary<Tag, Tag> attributes = null)
+        {
+            AddCData(Tag.Code, code, attributes);
         }
 
         public static void AddProperties(string title, string description, string keywords, string postID, string blogType, DateTime dateTime)
         {
-            AddTag(tagBlogType, blogType);
-            AddTag(tagTitle, title);
-            AddTag(tagDescription, description);
-            AddTag(tagKeywords, keywords);
-            AddTag(tagPostID, postID);
-            AddTag(tagDate, dateTime.ToString("ddMMyyyy"));
+            AddTag(Tag.Blogtype, blogType);
+            AddTag(Tag.Postdate, dateTime.ToString("ddMMyyyy"));
+            AddTag(Tag.Title, title);
+            AddTag(Tag.Description, description);
+            AddTag(Tag.Keywords, keywords);
+            AddTag(Tag.Postid, postID);
         }
 
-        private static void AddTag(string name, string text, Dictionary<string, string> attributes = null)
+        private static void AddCData(Tag tag, string text, Dictionary<Tag, Tag> attributes = null)
         {
             XmlElement root = xmlDoc.DocumentElement;
-            XmlElement newElement = xmlDoc.CreateElement(name);
+            XmlElement newElement = xmlDoc.CreateElement(tag.ToString());
+            var cdata = xmlDoc.CreateCDataSection(text);
+
+            if(attributes != null)
+            {
+                foreach (var attributeEntry in attributes.Keys)
+                {
+                    XmlAttribute attribute = xmlDoc.CreateAttribute(attributeEntry.ToString());
+                    attribute.Value = attributes[attributeEntry].ToString();
+                    newElement.Attributes.Append(attribute);
+                }
+            }
+
+            newElement.AppendChild(cdata);
+            root.AppendChild(newElement);
+        }
+
+        private static void AddTag(Tag tag, string text, Dictionary<Tag, string> attributes = null)
+        {
+            XmlElement root = xmlDoc.DocumentElement;
+            XmlElement newElement = xmlDoc.CreateElement(tag.ToString());
             newElement.InnerText = text;
 
             if(attributes != null)
             {
                 foreach (var attributeEntry in attributes.Keys)
                 {
-                    XmlAttribute attribute = xmlDoc.CreateAttribute(attributeEntry);
+                    XmlAttribute attribute = xmlDoc.CreateAttribute(attributeEntry.ToString());
                     attribute.Value = attributes[attributeEntry];
                     newElement.Attributes.Append(attribute);
                 }
@@ -59,29 +106,14 @@ namespace BlogPostCreator
             root.AppendChild(newElement);
         }
 
-        public static void WriteBlogXmlFile(string filename)
+        internal static void WriteBlogXmlFile(string filename)
         {
             File.WriteAllText(filename, xmlDoc.InnerXml);
         }
 
-        public static void ConvertBlogXmlFile(string filename)
+        internal static void ConvertToBlogContents(string filename)
         {
-            try
-            {
-                string text = File.ReadAllText(filename);
-                string blog = ConvertToBlogger(text);
-                string site = ConvertToWebSite(text);
-
-                File.WriteAllText(filename + "_site", site);
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
-        private static string ConvertToWebSite(string text)
-        {
+            string text = File.ReadAllText(filename);
             //0 - date
             //y - year
             //d - day
@@ -92,23 +124,31 @@ namespace BlogPostCreator
             //4 - postid
             //5 - classname
             //6 - blogid
-            string brief = @"";
-            string rest = @"";
-            string description = @"";
-            string keywords = @"";
+            string description = string.Empty;
+            string keywords = string.Empty;
+            string title = string.Empty;
+            string postcontent = string.Empty;
+            string date = string.Empty;
+            string blogger = string.Empty;
 
             string postdefinition = @"new Post { BlogID = {6}, BriefContent = {5}.content_{0}_b, RestOfContent = {5}.content_{0}_r, Keywords = {5}.content_{0}_k, Description = {5}.content_{0}_d, DateCreated = new DateTime({y}, {m}, {d}), PostID = {4}, Title = ""{1}"" }," + Environment.NewLine;
 
             using (XmlReader reader = XmlReader.Create(new StringReader(text)))
             {
+                Tag element = Tag.Blogtype;
+                reader.MoveToContent();
                 while (reader.Read())
                 {
                     if (reader.NodeType == XmlNodeType.Element)
                     {
-                        switch (reader.Name)
+                        element = (Tag)Enum.Parse(typeof(Tag), reader.Name);
+                    }
+                    else if(reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
+                    {
+                        switch (element)
                         {
-                            case tagBlogType:
-                                switch (reader.ReadInnerXml())
+                            case Tag.Blogtype:
+                                switch (reader.Value)
                                 {
                                     case "bio":
                                         postdefinition = postdefinition.Replace("{5}", "BlogPostsBiology");
@@ -120,60 +160,63 @@ namespace BlogPostCreator
                                         break;
                                 }
                                 break;
-                            case tagTitle:
-                                postdefinition = postdefinition.Replace("{1}", reader.ReadInnerXml());
+                            case Tag.Title:
+                                title = reader.Value;
+                                postdefinition = postdefinition.Replace("{1}", title);
                                 break;
-                            case tagDescription:
-
+                            case Tag.Description:
+                                description = "public const string content_" + date + "_d = \"" + reader.Value + "\";" + Environment.NewLine;
                                 break;
-                            case tagKeywords:
-
+                            case Tag.Keywords:
+                                keywords = "public const string content_" + date + "_k = \"" + reader.Value + "\";" + Environment.NewLine;
                                 break;
-                            case tagPostID:
-                                postdefinition = postdefinition.Replace("{4}", reader.ReadInnerXml());
+                            case Tag.Postid:
+                                postdefinition = postdefinition.Replace("{4}", reader.Value);
                                 break;
-                            case tagDate:
-                                string date = reader.ReadInnerXml();
+                            case Tag.Postdate:
+                                date = reader.Value;
                                 postdefinition = postdefinition.Replace("{y}", date.Substring(4, 4));
                                 postdefinition = postdefinition.Replace("{d}", date.Substring(0, 2));
                                 postdefinition = postdefinition.Replace("{m}", date.Substring(2, 2));
                                 postdefinition = postdefinition.Replace("{0}", date);
                                 break;
-                            default:
+                            case Tag.Paragraph:
+                                postcontent = postcontent + "<p>" + reader.Value + "</p>";
+                                blogger = blogger + "<p>" + reader.Value + "</p>";
                                 break;
-                        }
-                    }
-                }
-            }
-            return postdefinition + brief + rest + description + keywords;
-        }
-
-
-        private static string ConvertToBlogger(string text)
-        {
-            string result = string.Empty;
-            using (XmlReader reader = XmlReader.Create(new StringReader(text)))
-            {
-                while (reader.Read())
-                {
-                    if (reader.NodeType == XmlNodeType.Element)
-                    {
-                        switch (reader.Name)
-                        {
-                            case "para":
-                                result = result + "<p>" + reader.ReadInnerXml() + "</p>";
+                            case Tag.Code:
+                                string code = reader.Value;
+                                string bloggercode = reader.Value;
+                                code = "<pre class=\\\"brush:csharp\\\">\" + @\"" +
+                                       code.Replace("<", "&lt;").Replace(">", "gt;").Replace("\"", "\"\"") +
+                                       "\" + \"</pre>";
+                                bloggercode = "<pre class=\"brush:" + reader.GetAttribute(Tag.Lang.ToString()) + "\">" + bloggercode.Replace("<", "&lt;").Replace(">", "gt;") + "</pre>";
+                                postcontent = postcontent + code;
+                                blogger = blogger + bloggercode;
                                 break;
-                            case "image":
-                                string alt = reader.GetAttribute("alt");
-                                result = result + "<img src=" + reader.ReadInnerXml() + " alt=\"" + alt + "\"/>";
+                            case Tag.Image:
+                                blogger = blogger + "<img src=" + reader.Value + " alt=\"" + reader.GetAttribute("alt") + "\"/>";
                                 break;
                             default:
                                 break;
                         }
                     }
                 }
+
+                string brief = "public const string content_" + date + "_b = \"" + postcontent + "\";" + Environment.NewLine;
+                string rest = "public const string content_" + date + "_r = \"" + "by <a title= \\\"Evgeny\\\" rel=\\\"author\\\" href=\\\"https://plus.google.com/112677661119561622427?rel=author\\\" alt=\\\"Google+\\\" title=\\\"Google+\\\">Evgeny</a>" + "\";" + Environment.NewLine;
+                blogger = blogger + "by <a title=\"Evgeny\" rel=\"author\" href=\"https://plus.google.com/112677661119561622427?rel=author\" alt=\"Google+\" title=\"Google+\">Evgeny</a>. Also posted on <a href=\"http://www.ynegve.info/Post/{link}\">my website</a>";
+                string comment = "//" + title + Environment.NewLine;
+
+                string blogName = filename + "_blog";
+                string siteName = filename + "_site";
+
+                if (File.Exists(blogName)) File.Delete(blogName);
+                if (File.Exists(siteName)) File.Delete(siteName);
+
+                File.WriteAllText(siteName, postdefinition + comment + brief + rest + description + keywords);
+                File.WriteAllText(blogName, blogger);
             }
-            return result;
         }
     }
 }

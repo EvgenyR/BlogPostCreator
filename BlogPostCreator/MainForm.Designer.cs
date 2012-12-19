@@ -32,6 +32,19 @@
             this.btnOpenFile = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpGeneral = new System.Windows.Forms.TabPage();
+            this.cmbBlogType = new System.Windows.Forms.ComboBox();
+            this.lblBlogType = new System.Windows.Forms.Label();
+            this.txtPostID = new System.Windows.Forms.TextBox();
+            this.lblPostID = new System.Windows.Forms.Label();
+            this.dtDate = new System.Windows.Forms.DateTimePicker();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.txtKeywords = new System.Windows.Forms.TextBox();
+            this.lblKeywords = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnAddProperties = new System.Windows.Forms.Button();
             this.tpCompose = new System.Windows.Forms.TabPage();
             this.txtCode = new System.Windows.Forms.RichTextBox();
             this.cmbLang = new System.Windows.Forms.ComboBox();
@@ -48,19 +61,6 @@
             this.tpPreview = new System.Windows.Forms.TabPage();
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.sfdSaveBlog = new System.Windows.Forms.SaveFileDialog();
-            this.btnAddProperties = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtKeywords = new System.Windows.Forms.TextBox();
-            this.lblKeywords = new System.Windows.Forms.Label();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.dtDate = new System.Windows.Forms.DateTimePicker();
-            this.txtPostID = new System.Windows.Forms.TextBox();
-            this.lblPostID = new System.Windows.Forms.Label();
-            this.lblBlogType = new System.Windows.Forms.Label();
-            this.cmbBlogType = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpCompose.SuspendLayout();
@@ -74,9 +74,9 @@
             // 
             this.btnOpenFile.Location = new System.Drawing.Point(97, 298);
             this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(75, 23);
+            this.btnOpenFile.Size = new System.Drawing.Size(83, 23);
             this.btnOpenFile.TabIndex = 0;
-            this.btnOpenFile.Text = "Open File";
+            this.btnOpenFile.Text = "Convert File";
             this.btnOpenFile.UseVisualStyleBackColor = true;
             this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
@@ -114,6 +114,116 @@
             this.tpGeneral.Text = "Properties";
             this.tpGeneral.UseVisualStyleBackColor = true;
             // 
+            // cmbBlogType
+            // 
+            this.cmbBlogType.FormattingEnabled = true;
+            this.cmbBlogType.Items.AddRange(new object[] {
+            "bio",
+            "prog"});
+            this.cmbBlogType.Location = new System.Drawing.Point(129, 10);
+            this.cmbBlogType.Name = "cmbBlogType";
+            this.cmbBlogType.Size = new System.Drawing.Size(121, 21);
+            this.cmbBlogType.TabIndex = 12;
+            // 
+            // lblBlogType
+            // 
+            this.lblBlogType.AutoSize = true;
+            this.lblBlogType.Location = new System.Drawing.Point(17, 16);
+            this.lblBlogType.Name = "lblBlogType";
+            this.lblBlogType.Size = new System.Drawing.Size(31, 13);
+            this.lblBlogType.TabIndex = 11;
+            this.lblBlogType.Text = "Type";
+            // 
+            // txtPostID
+            // 
+            this.txtPostID.Location = new System.Drawing.Point(129, 144);
+            this.txtPostID.Name = "txtPostID";
+            this.txtPostID.Size = new System.Drawing.Size(278, 20);
+            this.txtPostID.TabIndex = 10;
+            // 
+            // lblPostID
+            // 
+            this.lblPostID.AutoSize = true;
+            this.lblPostID.Location = new System.Drawing.Point(17, 147);
+            this.lblPostID.Name = "lblPostID";
+            this.lblPostID.Size = new System.Drawing.Size(42, 13);
+            this.lblPostID.TabIndex = 9;
+            this.lblPostID.Text = "Post ID";
+            // 
+            // dtDate
+            // 
+            this.dtDate.Location = new System.Drawing.Point(129, 118);
+            this.dtDate.Name = "dtDate";
+            this.dtDate.Size = new System.Drawing.Size(200, 20);
+            this.dtDate.TabIndex = 8;
+            // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(17, 118);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(35, 13);
+            this.lblDate.TabIndex = 7;
+            this.lblDate.Text = "label4";
+            // 
+            // txtKeywords
+            // 
+            this.txtKeywords.Location = new System.Drawing.Point(129, 89);
+            this.txtKeywords.Name = "txtKeywords";
+            this.txtKeywords.Size = new System.Drawing.Size(278, 20);
+            this.txtKeywords.TabIndex = 6;
+            // 
+            // lblKeywords
+            // 
+            this.lblKeywords.AutoSize = true;
+            this.lblKeywords.Location = new System.Drawing.Point(17, 92);
+            this.lblKeywords.Name = "lblKeywords";
+            this.lblKeywords.Size = new System.Drawing.Size(53, 13);
+            this.lblKeywords.TabIndex = 5;
+            this.lblKeywords.Text = "Keywords";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(129, 63);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(278, 20);
+            this.txtDescription.TabIndex = 4;
+            // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(17, 66);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(60, 13);
+            this.lblDescription.TabIndex = 3;
+            this.lblDescription.Text = "Description";
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(129, 37);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(278, 20);
+            this.txtTitle.TabIndex = 2;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(17, 40);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(27, 13);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "Title";
+            // 
+            // btnAddProperties
+            // 
+            this.btnAddProperties.Location = new System.Drawing.Point(6, 225);
+            this.btnAddProperties.Name = "btnAddProperties";
+            this.btnAddProperties.Size = new System.Drawing.Size(101, 23);
+            this.btnAddProperties.TabIndex = 0;
+            this.btnAddProperties.Text = "Add Properties";
+            this.btnAddProperties.UseVisualStyleBackColor = true;
+            this.btnAddProperties.Click += new System.EventHandler(this.btnAddProperties_Click);
+            // 
             // tpCompose
             // 
             this.tpCompose.Controls.Add(this.txtCode);
@@ -148,9 +258,9 @@
             // 
             this.cmbLang.FormattingEnabled = true;
             this.cmbLang.Items.AddRange(new object[] {
-            "c#",
+            "csharp",
             "xml",
-            "js"});
+            "jscript"});
             this.cmbLang.Location = new System.Drawing.Point(6, 85);
             this.cmbLang.Name = "cmbLang";
             this.cmbLang.Size = new System.Drawing.Size(136, 21);
@@ -164,6 +274,7 @@
             this.btnAddCode.TabIndex = 22;
             this.btnAddCode.Text = "Add Code";
             this.btnAddCode.UseVisualStyleBackColor = true;
+            this.btnAddCode.Click += new System.EventHandler(this.btnAddCode_Click);
             // 
             // cmbParagraphs
             // 
@@ -185,6 +296,7 @@
             this.btnAddText.TabIndex = 20;
             this.btnAddText.Text = "Add Text";
             this.btnAddText.UseVisualStyleBackColor = true;
+            this.btnAddText.Click += new System.EventHandler(this.btnAddText_Click);
             // 
             // txtText
             // 
@@ -260,116 +372,6 @@
             this.btnSaveFile.Text = "Save File";
             this.btnSaveFile.UseVisualStyleBackColor = true;
             this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
-            // 
-            // btnAddProperties
-            // 
-            this.btnAddProperties.Location = new System.Drawing.Point(6, 225);
-            this.btnAddProperties.Name = "btnAddProperties";
-            this.btnAddProperties.Size = new System.Drawing.Size(101, 23);
-            this.btnAddProperties.TabIndex = 0;
-            this.btnAddProperties.Text = "Add Properties";
-            this.btnAddProperties.UseVisualStyleBackColor = true;
-            this.btnAddProperties.Click += new System.EventHandler(this.btnAddProperties_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(17, 40);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(27, 13);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "Title";
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.Location = new System.Drawing.Point(129, 37);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(278, 20);
-            this.txtTitle.TabIndex = 2;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(129, 63);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(278, 20);
-            this.txtDescription.TabIndex = 4;
-            // 
-            // lblDescription
-            // 
-            this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(17, 66);
-            this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(60, 13);
-            this.lblDescription.TabIndex = 3;
-            this.lblDescription.Text = "Description";
-            // 
-            // txtKeywords
-            // 
-            this.txtKeywords.Location = new System.Drawing.Point(129, 89);
-            this.txtKeywords.Name = "txtKeywords";
-            this.txtKeywords.Size = new System.Drawing.Size(278, 20);
-            this.txtKeywords.TabIndex = 6;
-            // 
-            // lblKeywords
-            // 
-            this.lblKeywords.AutoSize = true;
-            this.lblKeywords.Location = new System.Drawing.Point(17, 92);
-            this.lblKeywords.Name = "lblKeywords";
-            this.lblKeywords.Size = new System.Drawing.Size(53, 13);
-            this.lblKeywords.TabIndex = 5;
-            this.lblKeywords.Text = "Keywords";
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(17, 118);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(35, 13);
-            this.lblDate.TabIndex = 7;
-            this.lblDate.Text = "label4";
-            // 
-            // dtDate
-            // 
-            this.dtDate.Location = new System.Drawing.Point(129, 118);
-            this.dtDate.Name = "dtDate";
-            this.dtDate.Size = new System.Drawing.Size(200, 20);
-            this.dtDate.TabIndex = 8;
-            // 
-            // txtPostID
-            // 
-            this.txtPostID.Location = new System.Drawing.Point(129, 144);
-            this.txtPostID.Name = "txtPostID";
-            this.txtPostID.Size = new System.Drawing.Size(278, 20);
-            this.txtPostID.TabIndex = 10;
-            // 
-            // lblPostID
-            // 
-            this.lblPostID.AutoSize = true;
-            this.lblPostID.Location = new System.Drawing.Point(17, 147);
-            this.lblPostID.Name = "lblPostID";
-            this.lblPostID.Size = new System.Drawing.Size(42, 13);
-            this.lblPostID.TabIndex = 9;
-            this.lblPostID.Text = "Post ID";
-            // 
-            // lblBlogType
-            // 
-            this.lblBlogType.AutoSize = true;
-            this.lblBlogType.Location = new System.Drawing.Point(17, 16);
-            this.lblBlogType.Name = "lblBlogType";
-            this.lblBlogType.Size = new System.Drawing.Size(31, 13);
-            this.lblBlogType.TabIndex = 11;
-            this.lblBlogType.Text = "Type";
-            // 
-            // cmbBlogType
-            // 
-            this.cmbBlogType.FormattingEnabled = true;
-            this.cmbBlogType.Items.AddRange(new object[] {
-            "bio",
-            "prog"});
-            this.cmbBlogType.Location = new System.Drawing.Point(129, 10);
-            this.cmbBlogType.Name = "cmbBlogType";
-            this.cmbBlogType.Size = new System.Drawing.Size(121, 21);
-            this.cmbBlogType.TabIndex = 12;
             // 
             // MainForm
             // 

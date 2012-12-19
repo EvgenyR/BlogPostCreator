@@ -1,7 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
-using System.IO;
-using System.Xml;
 
 namespace BlogPostCreator
 {
@@ -19,7 +18,7 @@ namespace BlogPostCreator
             DialogResult result = ofdOpenBlog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                Helper.ConvertBlogXmlFile(ofdOpenBlog.FileName);
+                Helper.ConvertToBlogContents(ofdOpenBlog.FileName);
             }
         }
 
@@ -45,6 +44,17 @@ namespace BlogPostCreator
         private void btnAddProperties_Click(object sender, EventArgs e)
         {
             Helper.AddProperties(txtTitle.Text, txtDescription.Text, txtKeywords.Text, txtPostID.Text, cmbBlogType.SelectedItem.ToString(), dtDate.Value);
+        }
+
+        private void btnAddText_Click(object sender, EventArgs e)
+        {
+            Helper.AddText(txtText.Text);
+        }
+
+        private void btnAddCode_Click(object sender, EventArgs e)
+        {
+            Tag langName = (Tag)Enum.Parse(typeof (Tag), cmbLang.SelectedItem.ToString());
+            Helper.AddCode(txtCode.Text, new Dictionary<Tag, Tag>{{BlogPostCreator.Tag.Lang, langName}});
         }
     }
 }
