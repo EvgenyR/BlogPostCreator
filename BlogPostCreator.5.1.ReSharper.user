@@ -20,14 +20,14 @@
       <Item value="XmlAttribute" priority="0" />
       <Item value="image" priority="3" />
       <Item value="txtImageDate" priority="1" />
-      <Item value="alt" priority="1" />
+      <Item value="alt" priority="2" />
       <Item value="txtImageDesc" priority="1" />
       <Item value="root" priority="3" />
       <Item value="reference" priority="2" />
       <Item value="txtRefUrl" priority="1" />
       <Item value="txtRefText" priority="1" />
       <Item value="void" priority="8" />
-      <Item value="string" priority="57" />
+      <Item value="string" priority="61" />
       <Item value="DialogResult`0" priority="1" />
       <Item value="result" priority="1" />
       <Item value="sfdSaveBlog" priority="2" />
@@ -69,10 +69,10 @@
       <Item value="cmbBlogType" priority="0" />
       <Item value="blogType" priority="0" />
       <Item value="classname" priority="3" />
-      <Item value="reader" priority="36" />
+      <Item value="reader" priority="37" />
       <Item value="brief" priority="2" />
       <Item value="postdefinition" priority="13" />
-      <Item value="date" priority="2" />
+      <Item value="date" priority="4" />
       <Item value="default" priority="0" />
       <Item value="tagDescription" priority="0" />
       <Item value="tagKeywords" priority="0" />
@@ -88,18 +88,18 @@
       <Item value="else" priority="0" />
       <Item value="Text" priority="0" />
       <Item value="enum" priority="0" />
-      <Item value="Tag`0" priority="58" />
+      <Item value="Tag`0" priority="60" />
       <Item value="tag" priority="1" />
       <Item value="Enum`0" priority="2" />
       <Item value="Blogtype" priority="0" />
       <Item value="txtText" priority="0" />
-      <Item value="postcontent" priority="6" />
+      <Item value="postcontent" priority="10" />
       <Item value="CDATA" priority="2" />
       <Item value="code" priority="6" />
       <Item value="var" priority="1" />
       <Item value="cdata" priority="1" />
       <Item value="AddCData`0" priority="1" />
-      <Item value="blogger" priority="11" />
+      <Item value="blogger" priority="13" />
       <Item value="bloggercode" priority="2" />
       <Item value="Dictionary" priority="4" />
       <Item value="cmbLang" priority="0" />
@@ -114,13 +114,15 @@
       <Item value="paragraph" priority="3" />
       <Item value="List" priority="0" />
       <Item value="for" priority="0" />
-      <Item value="nodeAttributes" priority="2" />
+      <Item value="nodeAttributes" priority="4" />
       <Item value="EventHandler`0" priority="0" />
       <Item value="XmlUpdated" priority="0" />
       <Item value="EventArgs`0" priority="1" />
       <Item value="delegate" priority="0" />
       <Item value="object" priority="0" />
       <Item value="txtPreview" priority="0" />
+      <Item value="imagefolder" priority="2" />
+      <Item value="imagename" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Xml.XmlDocument">
       <Item value="CreateAttribute`0" priority="4" />
@@ -189,14 +191,14 @@
       <Item value="ToString`0" priority="2" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.String">
-      <Item value="Empty" priority="7" />
+      <Item value="Empty" priority="8" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Xml.XmlReader">
       <Item value="ReadInnerXml`0" priority="7" />
       <Item value="MoveToContent`0" priority="0" />
       <Item value="Name" priority="2" />
       <Item value="NodeType" priority="3" />
-      <Item value="Value" priority="11" />
+      <Item value="Value" priority="12" />
       <Item value="GetAttribute`0" priority="2" />
       <Item value="HasAttributes" priority="0" />
       <Item value="AttributeCount" priority="0" />
@@ -204,8 +206,8 @@
       <Item value="MoveToElement`0" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.String">
-      <Item value="Replace`0" priority="8" />
-      <Item value="Substring`0" priority="0" />
+      <Item value="Replace`0" priority="10" />
+      <Item value="Substring`0" priority="1" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Environment">
       <Item value="NewLine" priority="1" />
@@ -221,9 +223,9 @@
       <Item value="Ref" priority="1" />
       <Item value="Paragraph" priority="3" />
       <Item value="Code" priority="2" />
-      <Item value="Alt" priority="0" />
+      <Item value="Alt" priority="1" />
       <Item value="Desc" priority="1" />
-      <Item value="Lang" priority="1" />
+      <Item value="Lang" priority="2" />
       <Item value="Text" priority="3" />
       <Item value="Format" priority="2" />
       <Item value="BoldParagraph" priority="0" />
@@ -232,7 +234,7 @@
       <Item value="Prog" priority="0" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:BlogPostCreator.Tag">
-      <Item value="ToString`0" priority="11" />
+      <Item value="ToString`0" priority="13" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Enum">
       <Item value="Parse`0" priority="3" />
@@ -255,28 +257,20 @@
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Dictionary.cs" caret="0" fromTop="0" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.Designer.cs" caret="0" fromTop="0" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Program.cs" caret="429" fromTop="15" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1335" fromTop="18" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="8904" fromTop="10" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1289" fromTop="29" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11667" fromTop="11" />
     </RecentFiles>
     <RecentEdits>
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2822" fromTop="39" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2210" fromTop="23" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="1660" fromTop="13" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10613" fromTop="21" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="599" fromTop="25" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="7181" fromTop="25" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="2224" fromTop="32" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="2054" fromTop="26" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="1467" fromTop="18" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1893" fromTop="21" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10040" fromTop="27" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10280" fromTop="27" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2765" fromTop="23" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5176" fromTop="6" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5815" fromTop="20" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5953" fromTop="9" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5416" fromTop="11" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="12058" fromTop="24" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="12433" fromTop="24" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5224" fromTop="6" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5863" fromTop="20" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6001" fromTop="9" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5464" fromTop="11" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="13062" fromTop="24" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="13437" fromTop="24" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="3033" fromTop="27" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="3818" fromTop="19" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="794" fromTop="18" />
@@ -284,11 +278,19 @@
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="450" fromTop="17" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="326" fromTop="12" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="399" fromTop="21" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6367" fromTop="9" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6670" fromTop="13" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="9817" fromTop="17" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10040" fromTop="26" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="8904" fromTop="10" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6415" fromTop="9" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10280" fromTop="26" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10910" fromTop="17" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="4690" fromTop="19" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6680" fromTop="21" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="7048" fromTop="26" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11315" fromTop="16" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11850" fromTop="23" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11296" fromTop="17" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="9388" fromTop="13" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="9716" fromTop="17" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10075" fromTop="21" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="8957" fromTop="18" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

@@ -142,6 +142,7 @@ namespace BlogPostCreator
             string postcontent = string.Empty;
             string date = string.Empty;
             string blogger = string.Empty;
+            string imagefolder = string.Empty;
 
             string postdefinition = @"new Post { BlogID = {6}, BriefContent = {5}.content_{0}_b, RestOfContent = {5}.content_{0}_r, Keywords = {5}.content_{0}_k, Description = {5}.content_{0}_d, DateCreated = new DateTime({y}, {m}, {d}), PostID = {4}, Title = ""{1}"" }," + Environment.NewLine;
 
@@ -176,10 +177,12 @@ namespace BlogPostCreator
                                     case Tag.Bio:
                                         postdefinition = postdefinition.Replace("{5}", "BlogPostsBiology");
                                         postdefinition = postdefinition.Replace("{6}", "2");
+                                        imagefolder = "db";
                                         break;
                                     case Tag.Prog:
                                         postdefinition = postdefinition.Replace("{5}", "BlogPostsProgramming");
                                         postdefinition = postdefinition.Replace("{6}", "1");
+                                        imagefolder = "pr";
                                         break;
                                 }
                                 break;
@@ -207,21 +210,21 @@ namespace BlogPostCreator
                                 string url = reader.Value;
                                 string desc = nodeAttributes[Tag.Desc.ToString()];
                                 blogger = blogger + "<a href=\"" + url + "\">" + desc + "</a><br/>";
-                                postcontent = postcontent + "<a href=\"" + url + "\">" + desc + "</a><br/>";
+                                postcontent = postcontent + "<a href=\\\"" + url + "\\\">" + desc + "</a><br/>";
                                 break;
                             case Tag.TextParagraph:
                                 switch ((Tag)Enum.Parse(typeof(Tag), nodeAttributes[Tag.Format.ToString()]))
                                 {
                                     case Tag.Paragraph:
-                                        postcontent = postcontent + "<p>" + reader.Value + "</p>";
+                                        postcontent = postcontent + "<p>" + reader.Value.Replace("\"", "\\\"") + "</p>";
                                         blogger = blogger + "<p>" + reader.Value + "</p>";
                                         break;
                                     case Tag.BoldParagraph:
-                                        postcontent = postcontent + "<p><b>" + reader.Value + "</b></p>";
+                                        postcontent = postcontent + "<p><b>" + reader.Value.Replace("\"", "\\\"") + "</b></p>";
                                         blogger = blogger + "<p><b>" + reader.Value + "</b></p>";
                                         break;
                                     case Tag.CenteredParagraph:
-                                        postcontent = postcontent + "<p align=\\\"center\\\">" + reader.Value + "</p>";
+                                        postcontent = postcontent + "<p align=\\\"center\\\">" + reader.Value.Replace("\"", "\\\"") + "</p>";
                                         blogger = blogger + "<p align=\"center\">" + reader.Value + "</p>";
                                         break;
                                 } 
@@ -230,14 +233,22 @@ namespace BlogPostCreator
                                 string code = reader.Value;
                                 string bloggercode = reader.Value;
                                 code = "<pre class=\\\"brush:csharp\\\">\" + @\"" +
-                                       code.Replace("<", "&lt;").Replace(">", "gt;").Replace("\"", "\"\"") +
+                                       code.Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "\"\"") +
                                        "\" + \"</pre>";
-                                bloggercode = "<pre class=\"brush:" + reader.GetAttribute(Tag.Lang.ToString()) + "\">" + bloggercode.Replace("<", "&lt;").Replace(">", "gt;") + "</pre>";
+                                bloggercode = "<pre class=\"brush:" + nodeAttributes[Tag.Lang.ToString()] + "\">" + bloggercode.Replace("<", "&lt;").Replace(">", "&gt;") + "</pre>";
                                 postcontent = postcontent + code;
                                 blogger = blogger + bloggercode;
                                 break;
                             case Tag.Image:
-                                blogger = blogger + "<img src=" + reader.Value + " alt=\"" + reader.GetAttribute("alt") + "\"/>";
+                                string alt = nodeAttributes[Tag.Alt.ToString()];
+                                string imagename = date + "_" + alt.Replace(" ", "_");
+                                blogger = blogger + "<img src=" + reader.Value + " alt=\"" + alt + "\"/>";
+                                blogger = blogger + "<p align=\"center\">" + alt + "</p>";
+                                postcontent = postcontent +
+                                    "<div class=\\\"separator\\\" style=\\\"clear: both; text-align: center;\\\"><img src=\\\"../../../Content/images/blog/" + imagefolder;
+                                postcontent = postcontent +
+                                    "/" + date.Substring(4, 4) + "/" + imagename + ".png\\\" alt=\\\"" + alt + "\\\" /></div>";
+                                postcontent = postcontent + "<p align=\\\"center\\\">" + alt + "</p>";
                                 break;
                             default:
                                 break;
