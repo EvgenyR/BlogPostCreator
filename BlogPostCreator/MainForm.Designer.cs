@@ -61,9 +61,11 @@
             this.tpPreview = new System.Windows.Forms.TabPage();
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.sfdSaveBlog = new System.Windows.Forms.SaveFileDialog();
+            this.txtPreview = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpCompose.SuspendLayout();
+            this.tpPreview.SuspendLayout();
             this.SuspendLayout();
             // 
             // ofdOpenBlog
@@ -116,10 +118,11 @@
             // 
             // cmbBlogType
             // 
+            this.cmbBlogType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBlogType.FormattingEnabled = true;
             this.cmbBlogType.Items.AddRange(new object[] {
-            "bio",
-            "prog"});
+            "Bio",
+            "Prog"});
             this.cmbBlogType.Location = new System.Drawing.Point(129, 10);
             this.cmbBlogType.Name = "cmbBlogType";
             this.cmbBlogType.Size = new System.Drawing.Size(121, 21);
@@ -256,6 +259,7 @@
             // 
             // cmbLang
             // 
+            this.cmbLang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbLang.FormattingEnabled = true;
             this.cmbLang.Items.AddRange(new object[] {
             "csharp",
@@ -278,11 +282,12 @@
             // 
             // cmbParagraphs
             // 
+            this.cmbParagraphs.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbParagraphs.FormattingEnabled = true;
             this.cmbParagraphs.Items.AddRange(new object[] {
-            "p",
-            "p,b",
-            "b"});
+            "Paragraph",
+            "BoldParagraph",
+            "CenteredParagraph"});
             this.cmbParagraphs.Location = new System.Drawing.Point(6, 58);
             this.cmbParagraphs.Name = "cmbParagraphs";
             this.cmbParagraphs.Size = new System.Drawing.Size(136, 21);
@@ -355,6 +360,7 @@
             // 
             // tpPreview
             // 
+            this.tpPreview.Controls.Add(this.txtPreview);
             this.tpPreview.Location = new System.Drawing.Point(4, 22);
             this.tpPreview.Name = "tpPreview";
             this.tpPreview.Padding = new System.Windows.Forms.Padding(3);
@@ -373,6 +379,14 @@
             this.btnSaveFile.UseVisualStyleBackColor = true;
             this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
+            // txtPreview
+            // 
+            this.txtPreview.Location = new System.Drawing.Point(6, 6);
+            this.txtPreview.Multiline = true;
+            this.txtPreview.Name = "txtPreview";
+            this.txtPreview.Size = new System.Drawing.Size(506, 242);
+            this.txtPreview.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,6 +402,8 @@
             this.tpGeneral.PerformLayout();
             this.tpCompose.ResumeLayout(false);
             this.tpCompose.PerformLayout();
+            this.tpPreview.ResumeLayout(false);
+            this.tpPreview.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -427,6 +443,7 @@
         private System.Windows.Forms.Label lblPostID;
         private System.Windows.Forms.ComboBox cmbBlogType;
         private System.Windows.Forms.Label lblBlogType;
+        private System.Windows.Forms.TextBox txtPreview;
     }
 }
 

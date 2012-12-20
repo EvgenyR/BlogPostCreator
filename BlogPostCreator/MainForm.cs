@@ -9,8 +9,13 @@ namespace BlogPostCreator
         public MainForm()
         {
             InitializeComponent();
-
             Helper.StartDoc();
+            Helper.XmlUpdated += (sender, args) => UpdatePreview();
+        }
+
+        private void UpdatePreview()
+        {
+            txtPreview.Text = Helper.xmlDoc.InnerXml;
         }
 
         private void btnOpenFile_Click(object sender, EventArgs e)
@@ -48,12 +53,13 @@ namespace BlogPostCreator
 
         private void btnAddText_Click(object sender, EventArgs e)
         {
-            Helper.AddText(txtText.Text);
+            Tag paragraphType = (Tag) Enum.Parse(typeof (Tag), cmbParagraphs.SelectedItem.ToString());
+            Helper.AddText(txtText.Text, new Dictionary<Tag, Tag>{{BlogPostCreator.Tag.Format, paragraphType}});
         }
 
         private void btnAddCode_Click(object sender, EventArgs e)
         {
-            Tag langName = (Tag)Enum.Parse(typeof (Tag), cmbLang.SelectedItem.ToString());
+            Tag langName = (Tag)Enum.Parse(typeof(Tag), cmbLang.SelectedItem.ToString());
             Helper.AddCode(txtCode.Text, new Dictionary<Tag, Tag>{{BlogPostCreator.Tag.Lang, langName}});
         }
     }

@@ -15,7 +15,11 @@ namespace BlogPostCreator
         Postid,
         Image,
         Ref,
+        TextParagraph,
+        Format,
         Paragraph,
+        BoldParagraph,
+        CenteredParagraph,
         Code,
         //attributes
         Alt,
@@ -25,11 +29,17 @@ namespace BlogPostCreator
         csharp,
         xml,
         jscript,
-
+        //blogtype
+        Bio,
+        Prog
+        
     }
 
     public static class Helper
     {
+        public delegate void EventHandler(object sender, EventArgs args);
+        public static EventHandler XmlUpdated = delegate { };
+
         public static XmlDocument xmlDoc = new XmlDocument();
 
         internal static void StartDoc()
@@ -47,10 +57,9 @@ namespace BlogPostCreator
             AddTag(Tag.Ref, url, new Dictionary<Tag, string>{{Tag.Desc, desc}});
         }
 
-        internal static void AddText(string text)
+        internal static void AddText(string text, Dictionary<Tag, Tag> attributes = null)
         {
-            //AddTag(Tag.Paragraph, "<![CDATA[" + text + "]]>");
-            AddCData(Tag.Paragraph, text);
+            AddCData(Tag.TextParagraph, text, attributes);
         }
 
         internal static void AddCode(string code, Dictionary<Tag, Tag> attributes = null)
@@ -80,12 +89,14 @@ namespace BlogPostCreator
                 {
                     XmlAttribute attribute = xmlDoc.CreateAttribute(attributeEntry.ToString());
                     attribute.Value = attributes[attributeEntry].ToString();
+                    //cdata.Attributes.Append(attribute);
                     newElement.Attributes.Append(attribute);
                 }
             }
 
             newElement.AppendChild(cdata);
             root.AppendChild(newElement);
+            XmlUpdated(null, EventArgs.Empty);
         }
 
         private static void AddTag(Tag tag, string text, Dictionary<Tag, string> attributes = null)
@@ -104,6 +115,7 @@ namespace BlogPostCreator
                 }
             }
             root.AppendChild(newElement);
+            XmlUpdated(null, EventArgs.Empty);
         }
 
         internal static void WriteBlogXmlFile(string filename)
@@ -136,25 +148,36 @@ namespace BlogPostCreator
             using (XmlReader reader = XmlReader.Create(new StringReader(text)))
             {
                 Tag element = Tag.Blogtype;
+                Dictionary<string, string> nodeAttributes = new Dictionary<string, string>();
                 reader.MoveToContent();
                 while (reader.Read())
                 {
                     if (reader.NodeType == XmlNodeType.Element)
                     {
+                        nodeAttributes.Clear();
                         element = (Tag)Enum.Parse(typeof(Tag), reader.Name);
+                        if(reader.HasAttributes)
+                        {
+                            for (int i = 0; i < reader.AttributeCount; i++)
+                            {
+                                reader.MoveToAttribute(i);
+                                nodeAttributes.Add(reader.Name, reader.Value);
+                            }
+                            reader.MoveToElement();
+                        }
                     }
                     else if(reader.NodeType == XmlNodeType.Text || reader.NodeType == XmlNodeType.CDATA)
                     {
                         switch (element)
                         {
                             case Tag.Blogtype:
-                                switch (reader.Value)
+                                switch ((Tag)Enum.Parse(typeof(Tag), reader.Value))
                                 {
-                                    case "bio":
+                                    case Tag.Bio:
                                         postdefinition = postdefinition.Replace("{5}", "BlogPostsBiology");
                                         postdefinition = postdefinition.Replace("{6}", "2");
                                         break;
-                                    case "prog":
+                                    case Tag.Prog:
                                         postdefinition = postdefinition.Replace("{5}", "BlogPostsProgramming");
                                         postdefinition = postdefinition.Replace("{6}", "1");
                                         break;
@@ -180,9 +203,28 @@ namespace BlogPostCreator
                                 postdefinition = postdefinition.Replace("{m}", date.Substring(2, 2));
                                 postdefinition = postdefinition.Replace("{0}", date);
                                 break;
-                            case Tag.Paragraph:
-                                postcontent = postcontent + "<p>" + reader.Value + "</p>";
-                                blogger = blogger + "<p>" + reader.Value + "</p>";
+                            case Tag.Ref:
+                                string url = reader.Value;
+                                string desc = nodeAttributes[Tag.Desc.ToString()];
+                                blogger = blogger + "<a href=\"" + url + "\">" + desc + "</a><br/>";
+                                postcontent = postcontent + "<a href=\"" + url + "\">" + desc + "</a><br/>";
+                                break;
+                            case Tag.TextParagraph:
+                                switch ((Tag)Enum.Parse(typeof(Tag), nodeAttributes[Tag.Format.ToString()]))
+                                {
+                                    case Tag.Paragraph:
+                                        postcontent = postcontent + "<p>" + reader.Value + "</p>";
+                                        blogger = blogger + "<p>" + reader.Value + "</p>";
+                                        break;
+                                    case Tag.BoldParagraph:
+                                        postcontent = postcontent + "<p><b>" + reader.Value + "</b></p>";
+                                        blogger = blogger + "<p><b>" + reader.Value + "</b></p>";
+                                        break;
+                                    case Tag.CenteredParagraph:
+                                        postcontent = postcontent + "<p align=\\\"center\\\">" + reader.Value + "</p>";
+                                        blogger = blogger + "<p align=\"center\">" + reader.Value + "</p>";
+                                        break;
+                                } 
                                 break;
                             case Tag.Code:
                                 string code = reader.Value;
