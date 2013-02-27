@@ -59,9 +59,9 @@
             this.txtImageDesc = new System.Windows.Forms.TextBox();
             this.btnImage = new System.Windows.Forms.Button();
             this.tpPreview = new System.Windows.Forms.TabPage();
+            this.txtPreview = new System.Windows.Forms.TextBox();
             this.btnSaveFile = new System.Windows.Forms.Button();
             this.sfdSaveBlog = new System.Windows.Forms.SaveFileDialog();
-            this.txtPreview = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tpGeneral.SuspendLayout();
             this.tpCompose.SuspendLayout();
@@ -264,7 +264,9 @@
             this.cmbLang.Items.AddRange(new object[] {
             "csharp",
             "xml",
-            "jscript"});
+            "jscript",
+            "css",
+            "sql"});
             this.cmbLang.Location = new System.Drawing.Point(6, 85);
             this.cmbLang.Name = "cmbLang";
             this.cmbLang.Size = new System.Drawing.Size(136, 21);
@@ -369,6 +371,14 @@
             this.tpPreview.Text = "Preview";
             this.tpPreview.UseVisualStyleBackColor = true;
             // 
+            // txtPreview
+            // 
+            this.txtPreview.Location = new System.Drawing.Point(6, 6);
+            this.txtPreview.Multiline = true;
+            this.txtPreview.Name = "txtPreview";
+            this.txtPreview.Size = new System.Drawing.Size(506, 242);
+            this.txtPreview.TabIndex = 0;
+            // 
             // btnSaveFile
             // 
             this.btnSaveFile.Location = new System.Drawing.Point(16, 298);
@@ -378,14 +388,6 @@
             this.btnSaveFile.Text = "Save File";
             this.btnSaveFile.UseVisualStyleBackColor = true;
             this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
-            // 
-            // txtPreview
-            // 
-            this.txtPreview.Location = new System.Drawing.Point(6, 6);
-            this.txtPreview.Multiline = true;
-            this.txtPreview.Name = "txtPreview";
-            this.txtPreview.Size = new System.Drawing.Size(506, 242);
-            this.txtPreview.TabIndex = 0;
             // 
             // MainForm
             // 

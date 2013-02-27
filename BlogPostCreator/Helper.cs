@@ -29,6 +29,8 @@ namespace BlogPostCreator
         csharp,
         xml,
         jscript,
+        css,
+        sql,
         //blogtype
         Bio,
         Prog
@@ -232,7 +234,7 @@ namespace BlogPostCreator
                             case Tag.Code:
                                 string code = reader.Value;
                                 string bloggercode = reader.Value;
-                                code = "<pre class=\\\"brush:csharp\\\">\" + @\"" +
+                                code = "<pre class=\\\"brush:" + nodeAttributes[Tag.Lang.ToString()] + "\\\">\" + @\"" +
                                        code.Replace("<", "&lt;").Replace(">", "&gt;").Replace("\"", "\"\"") +
                                        "\" + \"</pre>";
                                 bloggercode = "<pre class=\"brush:" + nodeAttributes[Tag.Lang.ToString()] + "\">" + bloggercode.Replace("<", "&lt;").Replace(">", "&gt;") + "</pre>";

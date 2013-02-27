@@ -255,42 +255,42 @@
   <RecentFiles>
     <RecentFiles>
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Dictionary.cs" caret="0" fromTop="0" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.Designer.cs" caret="0" fromTop="0" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.Designer.cs" caret="12618" fromTop="18" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1308" fromTop="16" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Program.cs" caret="429" fromTop="15" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1289" fromTop="29" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11667" fromTop="11" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10605" fromTop="17" />
     </RecentFiles>
     <RecentEdits>
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="1467" fromTop="18" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="1893" fromTop="21" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10280" fromTop="27" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2765" fromTop="23" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5224" fromTop="6" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5863" fromTop="20" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6001" fromTop="9" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5464" fromTop="11" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="13062" fromTop="24" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="13437" fromTop="24" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="3033" fromTop="27" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="3818" fromTop="19" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="794" fromTop="18" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10308" fromTop="27" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="2793" fromTop="23" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5252" fromTop="6" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5891" fromTop="20" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6029" fromTop="9" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5492" fromTop="11" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="13127" fromTop="24" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="13502" fromTop="24" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="3061" fromTop="27" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="3846" fromTop="19" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="822" fromTop="18" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="234" fromTop="11" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="450" fromTop="17" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:MainForm.cs" caret="326" fromTop="12" />
       <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="399" fromTop="21" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6415" fromTop="9" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10280" fromTop="26" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10910" fromTop="17" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="4690" fromTop="19" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6680" fromTop="21" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="7048" fromTop="26" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11315" fromTop="16" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11850" fromTop="23" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11296" fromTop="17" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="9388" fromTop="13" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="9716" fromTop="17" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10075" fromTop="21" />
-      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="8957" fromTop="18" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10308" fromTop="26" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6708" fromTop="21" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="7076" fromTop="26" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11380" fromTop="16" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11915" fromTop="23" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="11361" fromTop="17" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="9416" fromTop="13" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="9744" fromTop="17" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10103" fromTop="21" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="8985" fromTop="18" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="5018" fromTop="98" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="6227" fromTop="98" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="579" fromTop="22" />
+      <File id="E04CF346-B19A-46A8-89D0-D9C9BB3CA75A/f:Helper.cs" caret="10621" fromTop="17" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
