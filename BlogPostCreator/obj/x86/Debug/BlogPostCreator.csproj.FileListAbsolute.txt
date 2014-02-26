@@ -16,3 +16,11 @@ C:\Users\exr\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\Blog
 C:\Users\exr\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.Properties.Resources.resources
 C:\Users\exr\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\exr\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\EVROK\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.exe
+C:\Users\EVROK\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.pdb
+C:\Users\EVROK\Documents\GitHub\BlogPostCreator\BlogPostCreator\bin\Debug\BlogPostCreator.exe
+C:\Users\EVROK\Documents\GitHub\BlogPostCreator\BlogPostCreator\bin\Debug\BlogPostCreator.pdb
+C:\Users\EVROK\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.csprojResolveAssemblyReference.cache
+C:\Users\EVROK\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.MainForm.resources
+C:\Users\EVROK\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.Properties.Resources.resources
+C:\Users\EVROK\Documents\GitHub\BlogPostCreator\BlogPostCreator\obj\x86\Debug\BlogPostCreator.csproj.GenerateResource.Cache
